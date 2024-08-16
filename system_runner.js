@@ -1,5 +1,6 @@
-const canvasWidth = 540;
-const canvasHeight = 960;
+const canvasWidth = 1280;
+const canvasHeight = 720;
+const bezierToolDefaultActive = false;
 
 
 let mainCanvas;
@@ -43,6 +44,10 @@ function songLoadedSoFar(soFar) {
 function preload() {
   table = loadTable('volumes.csv', 'csv');
   words = loadStrings('words.txt');
+  img = loadImage('starry-background.jpg');
+  img2 = loadImage('other-star-image.jpg');
+  img3 = loadImage('sun.png');
+  img4 = loadImage('sunReal.png');
 }
 
 let volumes = [];
@@ -75,6 +80,9 @@ function setup() {
   songButton.mousePressed(switchRunMode);
   songButton.parent('button1Container');
   songButton.elt.disabled = true;
+
+  // Initialise Bezier Helper
+  BezierHelper.useBezierTool(bezierToolDefaultActive);
 
   vol1 = [];
   vol2 = [];
@@ -119,7 +127,7 @@ function switchRunMode() {
     slider2.elt.disabled = true;
     slider3.elt.disabled = true;
     slider4.elt.disabled = true;
-
+    
     editorMode = false;
     let now = millis();
     songEpoch = now + (debugFastRefresh ? 0 : 5000);
