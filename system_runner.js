@@ -44,9 +44,7 @@ function songLoadedSoFar(soFar) {
 function preload() {
   table = loadTable('volumes.csv', 'csv');
   words = loadStrings('words.txt');
-  img = loadImage('starry-background.jpg');
   img2 = loadImage('other-star-image.jpg');
-  img3 = loadImage('sun.png');
   img4 = loadImage('sunReal.png');
   img5 = loadImage('moon.png');
   img6 = loadImage('dustcloud.png')

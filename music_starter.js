@@ -1,7 +1,6 @@
 
-let img;
 let img2;
-let img3
+let img4;
 let moonX = 0
 let moonTint = 110
 let cloudX = 1280
@@ -293,12 +292,8 @@ let drumSize = map(drum, 0, 100, 200, 250)
 
 }
 
+
 */
-
-
-
-
-
 
 
 
