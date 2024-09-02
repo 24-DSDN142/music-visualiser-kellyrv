@@ -48,6 +48,8 @@ function preload() {
   img2 = loadImage('other-star-image.jpg');
   img3 = loadImage('sun.png');
   img4 = loadImage('sunReal.png');
+  img5 = loadImage('moon.png');
+  img6 = loadImage('dustcloud.png')
 }
 
 let volumes = [];
