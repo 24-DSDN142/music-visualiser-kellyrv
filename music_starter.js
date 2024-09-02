@@ -252,94 +252,6 @@ pop()
 
 
 
-/*
-
-//bezier attempts
-
-stroke(217, 179, 98)
- strokeWeight(2)
- noFill()
- beginShape();
-
-
-vertex(683, 324);
-bezierVertex(689, 226, 842, 245, 849, 191);
-endShape();
-
-beginShape();
-vertex(636, 347);
-bezierVertex(599, 212, 772, 245, 748, 96);
-endShape();
-
-beginShape();
-vertex(598, 74);
-bezierVertex(678, 151, 533, 210, 640, 356);
-endShape();
-*/
-
-
-
-
-
-
-
-
-
-/*
-//weird sun images test
-
- push()
- let sunSize = map(vocal, 0, 100, 600, 660)
- translate(640,360) //moves sun 0,0 coordinates
- image(img3,-300, -290, sunSize, sunSize); //sun png
- rotate(90)
- image(img3,-290, -290, sunSize, sunSize); //sun png
- rotate(40)
- image(img3,-290, -290, sunSize, sunSize); //sun png
- pop()
- */
-
-
-
-
-
-
-
- /* 
- //line tests
- 
- let drumMap = map(drum,0, 100, 30, 90);
- let lengthOfLine = 200;
- let lineStart = 100;
- let lineEnd = lineStart + lengthOfLine;
-
- strokeWeight(6)
-
- for(let i =1; i < 6; i = i+1) {
-  let lineStepStart = i*100
-  let lineStepEnd = i*50
-  line(lineStart, lineStepStart, lineEnd, lineStepEnd)
-
- }
-
-
-
-
-
-
-
-
-/*let circleWidth
-
-let circleX
-ellipse(circleStart, 300, 100, 100)
-
-
-*/
-
-
-
-
 
 
 
@@ -381,61 +293,16 @@ let drumSize = map(drum, 0, 100, 200, 250)
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////// new block of example code here
-
-
-
-let bar_spacing = height / 10;
-let bar_height = width / 12;
-let bar_pos_x = width / 2;
-
-
-// vocal bar is red
-fill(200, 0, 0);
-rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-fill(0);
-text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
-
-// drum bar is green
-fill(0, 200, 0);
-rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-fill(0);
-text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
-
-// bass bar is blue
-fill(50, 50, 240);
-rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-fill(0);
-text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
-
-// other bar is white
-fill(200, 200, 200);
-rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-fill(0);
-text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-fill(255, 255, 0);
-
-// display "words"
-textAlign(CENTER);
-textSize(vocal);
-text(words, width/2, height/3); 
-
 */
+
+
+
+
+
+
+
+
+
+
+
+
