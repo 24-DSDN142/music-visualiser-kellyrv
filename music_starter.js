@@ -1,8 +1,9 @@
 
 let img2;
 let img4;
+let img5;
+let img6;
 let moonX = 0
-let moonTint = 110
 let cloudX = 1280
 let cloudX1 = 1280
 let cloudX2 = 980
@@ -215,25 +216,10 @@ pop()
 push()
 fill(0)
 ellipse(moonX,360,330,330) // moon background layer
+let moonTint = map(moonX, 250, 640, 105, 50)
 tint(130, moonTint);
 image(img5, moonX-165, 195, 330, 330) // moon image overlay layer, sourced from https://www.freeiconspng.com/img/44673 
 moonX = moonX + .2 //make moon travel accross screen slowly
-
-if (moonX > 250){moonTint = 105} //changes moon tint to be gradually darker as moves across screen
-if (moonX > 300){moonTint = 100}
-if (moonX > 350){moonTint = 95}
-if (moonX > 400){moonTint = 90}
-if (moonX > 450){moonTint = 85}
-if (moonX > 500){moonTint = 80}
-if (moonX > 550){moonTint = 75}
-if (moonX > 590){moonTint = 70}
-if (moonX > 610){moonTint = 65}
-if (moonX > 620){moonTint = 63}
-if (moonX > 630){moonTint = 61}
-if (moonX > 640){moonTint = 60}
-
-
-
 
 
 if (moonX > 640){
