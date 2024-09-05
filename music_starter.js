@@ -15,6 +15,8 @@ let starXPos = 0
 let starYPos = 60
 let starXPos2 = 1280
 let starYPos2 = 300
+let moonTint
+let fade
 
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -214,72 +216,69 @@ pop()
 
 
 push()
+
+if (counter <= 5600){
+ moonX = map(counter, 0, 5600, 0, 620) // make moon travel across screen and stop in middle, mapped to song duration
+//5900, 9618
+}
+else if (counter > 5600 && counter < 5900){ // make moon slow down
+  moonX = map(counter, 5600, 5900, 620, 640)
+}
+else if( counter > 5900 && counter < 6200){ //pause moon in middle of sun
+  moonX = 640 
+}
+
+else if (counter >= 6200 && counter < 6500){ //resume slow moon movement
+ moonX = map(counter, 6200, 6500, 640, 660 )
+}
+
+else if (counter >= 6500){
+ moonX = map(counter, 6500, 9618, 660, 1280) // resume quick moon movement
+}
+
+
 fill(0)
 ellipse(moonX,360,330,330) // moon background layer
-let moonTint = map(moonX, 250, 640, 105, 50)
+
+if(moonX < 640){
+ moonTint = map(moonX, 250, 640, 105, 50)
+}
+
+else if (moonX > 641) {
+ moonTint = map(moonX, 640, 1280, 50, 105)
+}
+
 tint(130, moonTint);
 image(img5, moonX-165, 195, 330, 330) // moon image overlay layer, sourced from https://www.freeiconspng.com/img/44673 
-moonX = moonX + .2 //make moon travel accross screen slowly
+//moonX = moonX + .2 //make moon travel accross screen slowly
+
+
+
 
 
 if (moonX > 640){
- moonX = 640 //make moon freeze over sun once it reaches centre
-}
+  moonX = 640 //make moon freeze over sun once it reaches centre
+ }
  
 
 pop()
 
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//drum!!!!!
-
-let drumSize = map(drum, 0, 100, 200, 250)
-
-//draw a drum
-
-  fill(255)
-  stroke("#aeb0af")
-  strokeWeight(6)
-  fill("#a11b12")
-  rect(270, 270, drumSize, 150) // drum body
-  fill("#f5ecdc")
-  ellipse(270, 200, drumSize, 75) //drum top
-  noStroke()
-  fill("#a11b12")
-  ellipse(270, 345, drumSize, 75) //drum bottom
-
-  stroke(0)
-  line(300, 550, 450, 450)
-  line(340, 570, 430, 440)
-
-  fill(0)
-  ellipse(450, 450, 8,10)
-  ellipse(430, 440, 8,10)
-
-
+push() //make video fade in
+if(counter < 500){
+let fade = map(counter, 0, 500, 255, 0) // make video fade out at end
+fill(0, fade)
+rect(0,0,1280,720)}
+pop()
+ 
+push() //make video fade out
+if(counter > 9000){
+let fade = map(counter, 9000, 9617, 0, 255) // make video fade out at end
+fill(0, fade)
+rect(0,0,1280,720)}
+pop()
 
 }
 
-
-*/
 
 
 
