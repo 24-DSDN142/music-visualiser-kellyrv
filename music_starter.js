@@ -264,15 +264,15 @@ if (moonX > 640){
 pop()
 
 push() //make video fade in
-if(counter < 500){
-let fade = map(counter, 0, 500, 255, 0) // make video fade out at end
+if(counter < 300){
+let fade = map(counter, 0, 300, 255, 0) // make video fade out at end
 fill(0, fade)
 rect(0,0,1280,720)}
 pop()
  
 push() //make video fade out
 if(counter > 9000){
-let fade = map(counter, 9000, 9617, 0, 255) // make video fade out at end
+let fade = map(counter, 9000, 9600, 0, 255) // make video fade out at end
 fill(0, fade)
 rect(0,0,1280,720)}
 pop()
