@@ -55,33 +55,33 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
  push() //shooting stars
- ellipse(starXPos-1000, starYPos, 15, 2) // draw twinkling stars
+ ellipse(starXPos-1000, starYPos, 15, 2) // draw shooting stars
  starXPos = starXPos + 60//make shooting star travel accross screen fast
  starYPos = starYPos + 15 // make shooting star travel at an angle
  if (starXPos > 5120){
   starXPos = -2560 //make shooting star start again
  }
- if (starYPos > 725){
+ else if (starYPos > 725){
   starYPos = -720 //make shooting star start again
  }
  
  pop()
 
  push() // shooting stars
- ellipse(starXPos2, starYPos2, 15, 2) // draw twinkling stars
+ ellipse(starXPos2, starYPos2, 15, 2) // draw shooting stars
  starXPos2 = starXPos2 - 60//make shooting star travel accross screen fast
  starYPos2 = starYPos2 + 20
  if (starXPos2 < -5120){
   starXPos2 = 5120 //make shooting star start again
  }
- if (starYPos2 > 725){
+ else if (starYPos2 > 725){
   starYPos2 = -725 //make shooting star start again
  }
  pop()
 
  
  push()
- tint(77, 79, 158, 230)
+ tint(77, 79, 158, 230) // tint clouds purple
  image(img6, cloudX1, 0, 400, 300) //small right dust clouds, sourced from https://pngtree.com/freepng/realistic-style-of-dust-clouds_6688646.html
  cloudX1 = cloudX1 - .5
  if (cloudX1 < -400){cloudX1 = 1280}
@@ -125,7 +125,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  push()
  tint(77, 79, 158, 200)
  rotate(-7)
- image(img6, cloudX6, 200, 600, 450) //big middle dust clouds, sourced from https://pngtree.com/freepng/realistic-style-of-dust-clouds_6688646.html
+ image(img6, cloudX6, 200, 600, 450) //additional big middle dust clouds, sourced from https://pngtree.com/freepng/realistic-style-of-dust-clouds_6688646.html
  cloudX6 = cloudX6 - .5
  if (cloudX6 < -600){cloudX6 = 1280}
  pop()
@@ -253,19 +253,17 @@ image(img5, moonX-165, 195, 330, 330) // moon image overlay layer, sourced from 
 //moonX = moonX + .2 //make moon travel accross screen slowly
 
 
-
-
-
 if (moonX > 640){
   moonX = 640 //make moon freeze over sun once it reaches centre
  }
- 
 
 pop()
 
+
+
 push() //make video fade in
 if(counter < 300){
-let fade = map(counter, 0, 300, 255, 0) // make video fade out at end
+let fade = map(counter, 0, 300, 255, 0) // make video fade in at beginning
 fill(0, fade)
 rect(0,0,1280,720)}
 pop()
